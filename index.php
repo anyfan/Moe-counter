@@ -1,4 +1,5 @@
 <?php
+header('content-type:image/svg+xml;charset=utf-8');
 include 'date.php';
 
 
@@ -32,15 +33,18 @@ $num = str_split("$num");
 
 $img_x = 0;
 
-echo '<?xml version="1.0" encoding="UTF-8"?>
-<svg width="680" height="150" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+echo "<?xml version='1.0' encoding='UTF-8'?>
+<svg width='680' height='150' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'>
     <title>Moe Count</title>
-    <g>';
+    <g>";
 
 for ($i = 0; $i < count($num); $i++) {
     $img_url = "assets/theme/" . $theme . "/" . $num[$i] . ".gif";
     $img_date = img_date($img_url);
-    $themeList_data = "<image x='$img_x' y='0' width=" . $img_date['width'] . " height=" . $img_date['height'] . " xlink:href=" . $img_date['date'] . " />";
+    $img_w = $img_date['width'];
+    $img_h = $img_date['height'];
+    $img_d = $img_date['date'];
+    $themeList_data = "<image x='$img_x' y='0' width='$img_w' height='$img_h' xlink:href='$img_d' />";
     $img_x += $img_date['width'];
     echo ($themeList_data);
 }
