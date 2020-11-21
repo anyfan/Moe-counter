@@ -1,7 +1,7 @@
 <?php
 class db
 {
-
+    
     public static function connect_db()
     {
         $servername = "localhost";
@@ -39,12 +39,10 @@ class db
     {
         $conn = self::connect_db();
         $result = mysqli_query($conn, "SELECT * FROM MoeCount WHERE name='$name'");
-        // print_r($result);
+
         if ($result) {
             $flag = $result->num_rows;
-            // echo $flag;
             $day = date("Y-m-d");
-            // print_r($result->num_rows);
             // 判断是否存在名字
             if ($flag == 0) {
                 mysqli_query($conn, "INSERT INTO MoeCount (name, num, day) VALUES ('$name', '0', '$day')");
@@ -52,18 +50,15 @@ class db
             }
             $row = mysqli_fetch_array($result);
             if ($row['day'] != $day) {
-                echo '$flag';
+                // echo '$flag';
                 mysqli_query($conn, "UPDATE MoeCount SET day ='$day' WHERE name = '$name'");
                 mysqli_query($conn, "UPDATE MoeCount SET num ='0' WHERE name = '$name'");
-
-
                 $result = mysqli_query($conn, "SELECT * FROM MoeCount WHERE name='$name'");
                 $row = mysqli_fetch_array($result);
             } else {
                 $num = $row['num']+1;
                 mysqli_query($conn, "UPDATE MoeCount SET num ='$num' WHERE name = '$name'");
             }
-            // print_r($row);
             return $row['num'];
         } else {
             echo "数据库错误";
