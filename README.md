@@ -4,21 +4,21 @@
 
 > 使用php实现https://github.com/journey-ad/Moe-counter
 
-> 数据每天重置为0，不重置请自行修改`date.php`52行条件
+> 数据每天重置为0，不重置请自行修改`date.php`52行条件锁死即可。
 
-![Moe-counter](https://api.anyfan.top/count/)
+<a href="https://api.anyfan.top/count/"><img src="https://api.anyfan.top/count/?name=demo"></a>
 
 <details>
 <summary>More theme</summary>
 
 ##### moebooru
-![Moe-counter](https://api.anyfan.top/count/?name=view)
+![Moe-counter](https://api.anyfan.top/count/?theme=moebooru&name=view)
 
 ##### gelbooru
-![Moe-counter](https://api.anyfan.top/count/?name=view&theme=gelbooru)
+![Moe-counter](https://api.anyfan.top/count/?theme=gelbooru&name=view)
 
 ##### rule34
-![Moe-counter](https://api.anyfan.top/count/?name=view&theme=rule34)
+![Moe-counter](https://api.anyfan.top/count/?theme=rule34&name=view)
 </details>
 
 ## 示范
