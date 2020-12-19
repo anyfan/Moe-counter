@@ -2,7 +2,7 @@
 
 多种风格可选的萌萌计数器
 
-> 使用php实现https://github.com/journey-ad/Moe-counter,练手用的，建议使用原版
+> 使用php实现https://github.com/journey-ad/Moe-counter ,纯练手用的，建议使用原版
 
 > 数据每天重置为0，不重置请自行修改`date.php`52行条件锁死即可。
 
